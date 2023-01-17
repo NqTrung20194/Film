@@ -5,9 +5,366 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#cfff95 ;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.bg_head {
+  background-color: #6b9b37;
+  font-weight: bold;
+ }
+ .bg_li {
+  background-color: #6b9b37;
+ }
+
+ .dropdown-item {
+  background-color: #6b9b37!important;
+  color:black!important;
+ }
+ .dropdown-item:active, .dropdown-item:hover{
+  background-color: #cfff95!important;
+  color:Black!important;
+ }
+ .cardButton ul{
+  width: 100%;
+ }
+ .cardButton li{
+  float: left;
+  width: 50%;
+  transform: none;
+  list-style-type: none;
+ }
+
+ .mainFooter {
+  background-color: #6b9b37;
+ }
+ a{
+  color: black;
+  
+}
+a:hover{
+  color: #6b9b37;
+  text-decoration: none;
+}
+.login-container{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.login-form-1{
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.login-form-1 h3{
+  text-align: center;
+  color: #333;
+}
+.login-container form{
+  padding: 10%;
+  background-color: #cfff95;
+}
+.bg-login {
+  background-image: url(../public/img/bg/DKTV.jpg);
+  background-size: 100% 400px;
+}
+.btnSubmit
+{
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+  
+}
+.login-form-1 .btnSubmit{
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
+}
+
+.UerInf{
+  background-color: #fff;
+}
+
+.navUser{
+  text-transform: uppercase;
+  margin: 2px 0;
+}
+.navUser li {
+   margin: 2px 0;
+    background:url(../public/img/css/ribon_left-ccc.png) no-repeat scroll left center #ccc;
+  }
+
+.navUser li .active {
+  background-color: #ccc;
+  background:url(../public/img/css/ribon_left.png) no-repeat scroll left center #e71a0f;
+}
+.navUser li:hover{
+  background:url(../public/img/css/ribon_left.png) no-repeat scroll left center #e71a0f;
+}
+.infor {
+  line-height: 18px;
+  font-family: arial;
+  font-size: 16px;
+  font-weight: normal;
+}
+.inForUserTable{
+  
+    float: left;
+    width: 100%;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: normal;
+
+}
+.inForUserTable .itemBox{
+  text-align: center;
+ border-left: black 1px solid;
+}
+.icon-acc-add {
+    background: #2f95ec;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 20px;
+    color: #fff !important;
+    font-size: 14px;
+}
+
+.inforUser{
+  font-size: 16px;
+  clear: both;
+}
+.inforUser .item{
+float: left;
+padding: 3px;
+margin: 3px;
+}
+
+.card-body .card-text{
+  line-height: 15px;
+  margin: 2;
+}
+@import url('https://fonts.googleapis.com/css?family=Manjari:400,700&display=swap');
+.calenDar{
+  text-align: center;
+  width: 100%;
+}
+.calendar {
+  box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, .1);
+  border-radius: 6px;
+ 
+}
+.week{
+  width: 100%;
+  text-align: center; 
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.calendar .header{
+  clear: both;
+  text-align: center;
+  text-justify: auto;
+  margin: 5px;
+  width: 100%;
+}
+.datetime{
+  width: 100%;
+}
+
+.week-cell{
+  width: 13%;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.day-cell{
+  width: 13%;
+  padding: 0;
+  margin-left: 5px;
+  margin-bottom: 1px;
+}
+
+.modal-dialog{
+  max-width: 1500px;
+}
+
+.calenDar .active{
+  border: #6b9b37 2px solid;
+  background-color: #6b9b37;
+  color: #ccc;
+  border-radius: 5px;
+  
+}
+.day-cell--today{
+  border: #e71a0f 2px solid;
+  background-color: #e71a0f;
+  border-radius: 5px;
+
+}
+.day-cell--faded{
+  background-color: #ccc;
+  border-radius: 5px;
+  color: #fff;
+}
+.row{
+  margin-left: 0!important;
+}
+
+.site{
+  width: 10 0%;
+}
+.site .text{
+  border: #6b9b37 2px solid;
+  border-radius: 5px;
+  text-align: center ;
+  margin-left: 2px;
+  width: 150px;
+  float: left;
+}
+.site .text:hover{
+  border: #6b9b37 2px solid;
+  background-color: #6b9b37;
+  color: #ccc;
+  border-radius: 5px;
+  text-align: center ;
+  margin-left: 2px;
+  width: 150px;
+  float: left;
+}
+.site .active{
+  border: #6b9b37 2px solid;
+  background-color: #6b9b37;
+  color: #ccc;
+  border-radius: 5px;
+  text-align: center ;
+  margin-left: 2px;
+  width: 150px;
+  float: left;
+}
+
+.rap{
+  clear: both;
+  margin-top: 2px;
+}
+.rap .text{
+  border: #6b9b37 2px solid;
+  border-radius: 5px;
+  text-align: center ;
+  margin-left: 2px;
+  width: 150px;
+  float: left;
+}
+.rap .text:hover{
+  border: #6b9b37 2px solid;
+  background-color: #6b9b37;
+  color: #ccc;
+  border-radius: 5px;
+  text-align: center ;
+  margin-left: 2px;
+  width: 150px;
+  float: left;
+}
+.rap .active{
+  border: #6b9b37 2px solid;
+  background-color: #6b9b37;
+  color: #ccc;
+  border-radius: 5px;
+  text-align: center ;
+  margin-left: 2px;
+  width: 150px;
+  float: left;
+}
+
+.inFor-GioHang{
+  padding-bottom: 5px;
+  border-bottom: #333 1px solid;
+}
+.infor-img{
+  width: 100%;
+}
+.inFor-Phim{
+  clear: both;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  font-weight: normal;
+}
+
+
+/* search */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  width: 500px;
+  margin-left: -50%;
+  max-height: 500px;
+  overflow: auto;
+  /* bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  margin-bottom: 200px; */
+}
+
+/* Popup arrow */
+/* .popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+} */
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.image{
+  text-align: center;
+  padding: 5px;
+}
+
+.card-img-top{
+  width: 70%;
 }

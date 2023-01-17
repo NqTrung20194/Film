@@ -1,0 +1,92 @@
+<div class="col-md-9">
+  <div class="container">
+    
+      <h2>add user</h2>
+      <form action="" id="formLogin" method="post">
+        <div class="form-group">
+          <label for="name">Tên Đăng nhập:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter username" name="name">
+          <span id="err_username"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">Địa chỉ thư:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <span id="err_email"></span>
+    </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+          <span id="err_password"></span>
+      </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+      $('#formLogin').on('submit',function(e){
+          e.preventDefault();
+          var name, password, flag=1;
+          name = $('#name').val();
+          password = $('#password').val();
+          email = $('#email').val();
+          //alert(username + password);
+          if(name == '')
+          {
+              flag = 0;
+              $('#err_username').text('Mời bạn nhập tên');
+              $('#err_username').show();
+          }else{
+            $('#err_username').hide();
+          }
+          if(password == '')
+          {
+              flag = 0;
+              $('#err_password').text('Mời bạn nhập mật khẩu');
+              $('#err_password').show();
+          }else{
+            $('#err_password').hide();
+          }
+          if(email == '')
+          {
+              flag = 0;
+              $('#err_email').text('Mời bạn nhập địa chỉ thư');
+              $('#err_email').show();
+          }else{
+            $('#err_email').hide();
+          }
+
+          if(flag==1)
+      { 
+        // console.log(name + ' ' + email + ' ' +password );
+          // gửi ajax
+          $.ajax({
+              // link
+              url: 'users/process',
+              // method
+              type: 'POST',
+              // dữ liệu
+              data: {
+                  'name': name,
+                  'password': password,
+                  'email': email
+              },
+              // kết quả trả về từ server
+              success: function(result){
+                  if(result.kq==1){
+                    window.location.href='users/index';
+                  }else{
+                    alert(result.err);
+                  }
+              }
+          });
+          return false;
+      }
+      });
+  });
+
+  
+</script>

@@ -1,0 +1,48 @@
+<!-- Leftside bar -->
+            <div id="tm-sidebar" class="tm-sidebar"> 
+                <nav class="tm-nav">
+                    
+                    
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <div class="tm-brand-box">
+                            <h1 class="tm-brand">Addmin</h1>
+                        </div>                
+                        <ul id="tm-main-nav">
+                            <%
+                    arr = [{
+                        name : 'Trang chủ',
+                        link: 'index'
+                    },
+                    {
+                        name : 'Danh mục',
+                        link: 'categories/index'
+                    },
+                    {
+                        name : 'Sản phẩm',
+                        link: 'products/index'
+                    },
+                    {
+                        name : 'Người Dùng',
+                        link: 'users/index'
+                    }];
+
+                    arr.forEach((e)=>{
+                        li = '/'+ e.link;
+                        (link == li)? active = 'active' : active = '';
+                    %>
+                            <li class="nav-item">                                
+                                <a href="<%-e.link%>" class="nav-link <%-active %> ">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-home nav-icon"></i>
+                                    <%-e.name %>
+                                </a>
+                            </li>
+                            
+                    <% });%>
+                        </ul>
+                    </div>
+                </nav>
+            </div>

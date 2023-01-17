@@ -1,0 +1,70 @@
+
+<div class="col-md-9">
+    <a href="users/add">
+    <button class="btn btn-primary" style="width: 250px;" ><i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</button>
+</a>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Avata</th>
+          <th>Tên</th>
+          <th>status</th>
+          <th>Chức Năng</th>
+        </tr>
+        <%-table%>
+    </table>
+
+      <div><ul class="pagination">       
+        <%-pagination%>
+      </ul>
+    </div>
+</div>
+ <div class="popup_delete" ></div>
+  
+
+ 
+
+<script>
+function popup_delete(id,name){
+  //còn lại edit và delete
+  $('.popup_delete').html(`
+  <div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc muốn xóa <b class="text-tanger" >`+name+`</b> không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick = "xoangay('`+id+`')">Xóa</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Thoát</button>
+      </div>
+    </div>
+  </div>
+</div>
+` 
+);
+};
+
+function xoangay(id){
+  $('#vl_d'+id).remove();
+  //gui ajax
+  $.ajax({
+    url:'users/deleteOne',
+    type: 'Post',
+    data: {'id':id},
+    success : function(result){
+      if (result.kq==0) {
+        kq=result.err;
+      }else{
+        kq = result.mesage;
+        window.location.href='users/index';
+      }
+    }
+  });
+  return false;
+}
+</script>

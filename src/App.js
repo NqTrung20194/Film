@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
+import {BrowserRouter, Route,Router,Switch} from "react-router-dom"
+import HeaderHome from "./components/Header/HeaderHome";
+import Hompage from "./components/Pages/Hompage";
+import FilmDangChieu from "./components/Pages/FilmDangChieu"
+import FilmSapChieu from "./components/Pages/FilmSapChieu"
+import MainFooter from './components/Footer/MainFooter'
+import Details from "./components/Pages/Details";
+import Login from "./components/Pages/Login/Login";
+import RegisterUser from "./components/Pages/Register/RegisterUser";
+import { createBrowserHistory } from "history";
+import UserDetails from "./components/Pages/Users/UserDetails";
+
+export const history = createBrowserHistory()
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router history={history}>
+
+    <HeaderHome/>
+    <Switch>
+    <Route exact path="/" component={Hompage}  />
+    <Route exact path="/phimdangchieu" component={FilmDangChieu}  />
+    <Route exact path={"/phimsapchieu"} component={FilmSapChieu}/>
+    <Route exact path={"/details/:maPhim"} component={Details}/>
+    <Route exact path={"/login"} component={Login}/>
+    <Route exact path={"/register"} component={RegisterUser}/>
+    <Route exact path={"/userdetails"} component={UserDetails}/>
+
+
+    </Switch>
+    
+    <MainFooter/>
+    
+    </Router> 
   );
 }
 
