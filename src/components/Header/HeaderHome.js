@@ -7,7 +7,7 @@ import { getChiTietPhim, searchPhim } from "../../redux/Actions/FilmActions";
 export default function HeaderHome(props) {
   const userLogin = useSelector((rootReducer) => rootReducer.FilmReducer);
   const {searchArr} = useSelector((rootReducer) => rootReducer.FilmReducer);
-  console.log("searchArr:",searchArr)
+  // console.log("searchArr:",searchArr)
   const dispatch = useDispatch();
 
   const renderButtonLogin = () => {
@@ -51,7 +51,7 @@ const Search = ()=>{
 
   const handelSearch = (event)=>{
     let {value,name}=event.target;
-    console.log(event.target.value.trim())
+    // console.log(event.target.value.trim())
     setNoiDung({
       ...noidung,
       [name]:value,
@@ -222,30 +222,7 @@ const Search = ()=>{
                   </NavLink>
                 </div>
               </li>
-              <li className="nav-item dropdown bg_li">
-                <p
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  CULTUREPLEX
-                </p>
-                <div
-                  className="dropdown-menu bg_li"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <NavLink className="dropdown-item bg_li" to={"/"}>
-                    Quầy Online
-                  </NavLink>
-                  <NavLink className="dropdown-item" to={"/"}>
-                    Thẻ Quà Tặng
-                  </NavLink>
-                </div>
-              </li>
+              
             </ul>
             <form className="form-inline my-2 my-lg-0 ">
               <div className="popup">

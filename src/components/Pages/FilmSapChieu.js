@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getActionPhim } from "../../redux/Actions/FilmActions";
+import ModalMuaVe from "../../Modal/ModalMuaVe";
+import { getActionPhim, getModalChiTietPhim } from "../../redux/Actions/FilmActions";
 
 export default function Hompage(props) {
 
@@ -19,7 +20,9 @@ export default function Hompage(props) {
       if(phim.status === 2){
         return <div key={index} className="card text-left col-md-3 mt-2">
           <NavLink to={`/details/`+phim.maPhim}>
+          <div className="image">
       <img className="card-img-top" src={phim.hinhAnh} alt='...' />
+      </div>
 
       <div className="card-body">
         <h4 className="card-title">{phim.tenPhim}</h4>
@@ -31,7 +34,21 @@ export default function Hompage(props) {
       <div className="row cardButton">
       <ul >
         <li><p className="btn btn-primary"> Like {phim.like}</p></li>
-        <li ><button className="btn btn-danger">Mua vé</button></li>
+        <li>
+                  {/* Button trigger modal */}
+                  <button
+                    type="button"
+                    className="btn btn-danger "
+                    data-toggle="modal"
+                    data-target="#modelId"
+                    onClick={() => {
+                      const action = getModalChiTietPhim(phim.maPhim);
+                      dispatch(action);
+                    }}
+                  >
+                    Mua vé
+                  </button>
+                </li>
       </ul>
       </div>
       
@@ -47,6 +64,7 @@ export default function Hompage(props) {
     
     {rederPhimSapChieu()}
       </div>
+      <ModalMuaVe/>
     </div>
   );
 }
