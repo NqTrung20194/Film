@@ -95,6 +95,7 @@ const Search = ()=>{
                         className="btn btn-danger "
                         data-toggle="modal"
                         data-target="#modelId"
+                        // data-dismiss="modal"
                         onClick={()=>{
                           const action = getChiTietPhim(phim.maPhim);
                           dispatch(action);

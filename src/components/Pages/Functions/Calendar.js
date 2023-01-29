@@ -135,11 +135,11 @@ export default function Calendar() {
       
     );
   };
-// useState(
-//   ()=>{
-//     const action = ngayMuaVe(dayjs());
-//                   dispatch(action);
-//   }
-// )
+useState(
+  ()=>{
+    const action = ngayMuaVe(dayjs());
+                  dispatch(action);
+  }
+)
   return <div>{Calendar()}</div>;
 }
