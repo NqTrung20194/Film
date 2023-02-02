@@ -65,8 +65,9 @@ const Search = ()=>{
   const mangPhim = ()=>{
     if(searchArr){
       if(searchArr !== null){
-        return (
-          <div className={`popuptext ${(noidung.Search.trim()!=="")?"show":""}`}>
+        return (<div>
+          
+                <div className={`popuptext ${(noidung.Search.trim()!=="")?"show":""}`}>
             {searchArr.map((phim,index)=>{
           return(
             <div key={index} className="card text-left mt-2">
@@ -95,7 +96,7 @@ const Search = ()=>{
                         className="btn btn-danger "
                         data-toggle="modal"
                         data-target="#modelId"
-                        // data-dismiss="modal"
+                        
                         onClick={()=>{
                           const action = getChiTietPhim(phim.maPhim);
                           dispatch(action);
@@ -112,6 +113,8 @@ const Search = ()=>{
           )
         })}
          </div>
+        </div>
+         
         )
       }
       

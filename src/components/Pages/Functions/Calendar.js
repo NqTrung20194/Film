@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import range from "lodash-es/range";
 import { useDispatch } from "react-redux";
 import dayjs from "dayjs";
@@ -135,11 +135,11 @@ export default function Calendar() {
       
     );
   };
-useState(
+useEffect(
   ()=>{
     const action = ngayMuaVe(dayjs());
                   dispatch(action);
-  }
+  },[]
 )
   return <div>{Calendar()}</div>;
 }

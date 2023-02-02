@@ -7,13 +7,16 @@ export default function Details(props) {
   const { chiTietPhim } = useSelector((rootReducer) => rootReducer.FilmReducer);
 
   const dispatch = useDispatch();
+
   let maPhim = props.match.params.maPhim;
-  // console.log (maPhim);
+
+  
+
 
   useEffect(() => {
     const action = getChiTietPhim(maPhim);
     dispatch(action);
-  }, []);
+  }, [maPhim]);
   //  console.log(chiTietPhim);
   return (
     <div className="container pt-5 pb-5">
